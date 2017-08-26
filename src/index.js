@@ -4,7 +4,7 @@ import registerServiceWorker from './registerServiceWorker'
 import { Provider } from 'react-redux'
 import { renderRoutes } from 'react-router-config'
 import { ConnectedRouter } from 'react-router-redux'
-import store, { history } from './store/createStore'
+import store, { history } from 'store/createStore'
 import routes from 'routes'
 
 const MOUNT_NODE = document.getElementById('root')

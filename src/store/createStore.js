@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
-import rootReducer from './reducers'
+import makeRootReducer from './reducers'
 
 export const history = createHistory()
 
@@ -19,6 +19,8 @@ if (process.env.NODE_ENV === 'development') {
 
 const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers)
 
-const store = createStore(rootReducer, initialState, composedEnhancers)
+const store = createStore(makeRootReducer(), initialState, composedEnhancers)
+
+store.asyncReducers = {}
 
 export default store

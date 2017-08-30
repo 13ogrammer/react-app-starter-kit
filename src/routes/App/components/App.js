@@ -20,7 +20,7 @@ export class App extends Component {
     return (
       <div>
         <h3>
-          <Link to={`/app/${parseInt(page.id) + 1}`}>
+          <Link to={`/app/${parseInt(page.id, 10) + 1}`}>
             {name}
           </Link>
         </h3>
